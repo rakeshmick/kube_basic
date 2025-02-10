@@ -351,3 +351,23 @@ docker tag my-app:latest my-app:latest
 ## Push the image to Docker Hub
 
 docker push <your-dockerhub-username>/my-app:latest
+
+### Starting services in K8
+
+kubectl apply -f /tscicd/k8s/redis-deployment.yaml
+kubectl apply -f /tscicd/k8s/backend-deployment.yaml
+kubectl apply -f /tscicd/k8s/my-app.yaml
+
+to see the pods
+kubctl get pods
+
+to see service :
+kubectl get service
+
+You will see the ports in which the endpoints are exposed:
+
+```
+kubernetes        ClusterIP   <ip>       <none>        443/TCP          5d19h
+my-app            NodePort   <ip>        <none>        80:30080/TCP     16m
+
+```
