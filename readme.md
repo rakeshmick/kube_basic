@@ -371,3 +371,21 @@ kubernetes        ClusterIP   <ip>       <none>        443/TCP          5d19h
 my-app            NodePort   <ip>        <none>        80:30080/TCP     16m
 
 ```
+
+to check if the end point is up
+u can do a get
+into
+
+http://localhost:30001/user
+
+initially there wont be any data so
+we can do a json post to the same endpoint
+
+POST
+http://localhost:30001/user
+
+{"name":"rakesh", "address": "my home address"}
+
+and if you regrest the UI in
+http://localhost:30080/api/user
+you will see the updated values
