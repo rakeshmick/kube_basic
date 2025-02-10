@@ -1,0 +1,16 @@
+{
+  "name": "mono_cicd",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "npm run start --workspaces",
+    "build": "npm run build --workspaces"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}
